@@ -103,13 +103,13 @@ streamlit run app.py
 ## 👨‍💻 Developer  
 
 👤 **D ARUN KUMAR**  
-🔗 **LinkedIn:** [Your LinkedIn Profile](www.linkedin.com/in/kumardarun11)  
+🔗 **LinkedIn:** www.linkedin.com/in/kumardarun11  
 📧 **Email:** kumardarun11@example.com  
 🔗 **GitHub:** [kumardarun11](https://github.com/kumardarun11)  
 
 ---
 
 ### ⭐ **Like This Project?**  
-Give it a ⭐ on [GitHub](https://github.com/yourusername/dk-crypto-tracker) & Share it! 🚀  
+Give it a ⭐ on [GitHub](https://github.com/kumardarun11/dkcryptotracker) & Share it! 🚀  
 
 Let me know if you need any changes! 🚀
