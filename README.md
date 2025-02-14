@@ -1,82 +1,115 @@
-🚀 DK Crypto Tracker
-📊 Real-time Binance Cryptocurrency Tracker with AI Forecasting & Technical Analysis
+Here's your **README.md** file for GitHub:  
 
-📌 Features
-✅ Live cryptocurrency prices from Binance
-✅ AI-based price prediction using Facebook Prophet
-✅ Technical indicators (SMA, RSI, Bollinger Bands)
-✅ Candlestick charts with Plotly
-✅ Portfolio tracker to monitor holdings
-✅ Supports multiple base currencies (USD, INR, EUR, GBP)
+---
 
-🛠️ Installation & Setup
-1️⃣ Clone the Repository
-sh
-Copy
-Edit
+### 📊 DK Crypto Tracker  
+🚀 **Real-time Binance Cryptocurrency Tracker with AI Forecasting & Technical Analysis**  
+
+---
+
+## 🌟 Features  
+✅ **Live crypto prices** from Binance  
+✅ **AI price prediction** using Facebook Prophet  
+✅ **Technical indicators** (SMA, RSI, Bollinger Bands)  
+✅ **Candlestick charts** with Plotly  
+✅ **Portfolio tracker** to monitor holdings  
+✅ **Multi-currency support** (USD, INR, EUR, GBP)  
+
+---
+
+## 🛠 Installation & Setup  
+
+### 1️⃣ Clone the Repository  
+```sh
 git clone https://github.com/yourusername/dk-crypto-tracker.git
 cd dk-crypto-tracker
-2️⃣ Create a Virtual Environment
-sh
-Copy
-Edit
+```
+
+### 2️⃣ Create a Virtual Environment  
+```sh
 python -m venv venv
 source venv/bin/activate   # macOS/Linux
 venv\Scripts\activate      # Windows
-3️⃣ Install Dependencies
-sh
-Copy
-Edit
+```
+
+### 3️⃣ Install Dependencies  
+```sh
 pip install -r requirements.txt
-4️⃣ Set Up Binance API Keys
-Go to Binance API Management
-Create a new API key (Enable Spot & Margin trading)
-Add your keys to secrets.toml (for Streamlit Cloud)
-🔑 secrets.toml format:
-ini
-Copy
-Edit
+```
+
+### 4️⃣ Set Up Binance API Keys  
+1. **Create Binance API keys** from [Binance API Management](https://www.binance.com/en/my/settings/api-management)  
+2. **Enable Spot & Margin Trading** permissions  
+3. **Store API keys securely in Streamlit secrets**  
+
+#### 🔑 **For Local Development** (`.env` file)  
+```
+BINANCE_API_KEY="your_api_key_here"
+BINANCE_API_SECRET="your_api_secret_here"
+```
+
+#### 🔐 **For Streamlit Cloud** (`secrets.toml`)  
+```
 [binance]
 api_key = "your_api_key_here"
 api_secret = "your_api_secret_here"
-🚀 Running the App Locally
-sh
-Copy
-Edit
+```
+
+---
+
+## 🚀 Running the App Locally  
+```sh
 streamlit run app.py
-✅ Open http://localhost:8501 in your browser.
+```
+✅ Open `http://localhost:8501` in your browser.
 
-🌍 Deployment on Streamlit Cloud
-1️⃣ Go to Streamlit Cloud
-2️⃣ Click "New App" → Select GitHub Repository
-3️⃣ Add API keys in Secrets Management
-4️⃣ Click Deploy 🚀
+---
 
-⚡ Technologies Used
-Streamlit (UI Framework)
-CCXT (Binance API Wrapper)
-Plotly (Charts & Data Visualization)
-TA-Lib (Technical Indicators)
-Prophet (AI Forecasting)
-Pandas & NumPy (Data Handling)
-🔥 Issues & Debugging
-❌ ccxt.base.errors.ExchangeNotAvailable on Deployment?
-✔ Fix:
+## 🌍 Deploying on Streamlit Cloud  
+1️⃣ **Go to** [Streamlit Cloud](https://share.streamlit.io/)  
+2️⃣ **Click "New App" → Select GitHub Repository**  
+3️⃣ **Add API keys in Secrets Management**  
+4️⃣ **Click Deploy 🚀**  
 
-Check API key permissions (Spot & Margin trading enabled)
-Test Binance API request on Streamlit Cloud:
-python
-Copy
-Edit
-import requests
-url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
-response = requests.get(url)
-print(response.status_code, response.text)
-Ensure dependencies are installed in requirements.txt
-Use a VPN if Binance is restricted in your region
-👨‍💻 Developer
-👤 [Your Name]
-🔗 LinkedIn: Your LinkedIn Profile
-📧 Email: your-email@example.com
-🔗 GitHub: yourusername
+---
 
+## ⚡ Tech Stack  
+- **Streamlit** → UI Framework  
+- **CCXT** → Binance API Wrapper  
+- **Plotly** → Charts & Data Visualization  
+- **TA-Lib** → Technical Indicators  
+- **Prophet** → AI Forecasting  
+- **Pandas & NumPy** → Data Handling  
+
+---
+
+## ❌ Debugging Issues  
+
+### 🔴 `ccxt.base.errors.ExchangeNotAvailable`?  
+✔ **Try These Fixes:**  
+- **Check API Key Permissions** (Spot & Margin enabled)  
+- **Test Binance API Request on Streamlit Cloud:**  
+  ```python
+  import requests
+  url = "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT"
+  response = requests.get(url)
+  print(response.status_code, response.text)
+  ```
+- **Ensure `requirements.txt` is updated**  
+- **Use VPN** if Binance is restricted in your region  
+
+---
+
+## 👨‍💻 Developer  
+
+👤 **[Your Name]**  
+🔗 **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile/)  
+📧 **Email:** your-email@example.com  
+🔗 **GitHub:** [yourusername](https://github.com/yourusername)  
+
+---
+
+### ⭐ **Like This Project?**  
+Give it a ⭐ on [GitHub](https://github.com/yourusername/dk-crypto-tracker) & Share it! 🚀  
+
+Let me know if you need any changes! 🚀
