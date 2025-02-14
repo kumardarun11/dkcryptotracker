@@ -57,6 +57,24 @@ api_secret = "your_api_secret_here"
 
 ---
 
+
+## 📸 Screenshots
+
+Add some screenshots of the app running locally or deployed on Streamlit.
+
+### 1️⃣ Live Crypto Prices
+![image](https://github.com/user-attachments/assets/1ddff589-df38-4fb4-8052-6bfb7fbe7245)
+
+### 2️⃣ Technical Analysis & Indicators
+![image](https://github.com/user-attachments/assets/c65d5897-5da3-41ab-a545-e3bc2fb1060b)
+
+### 3️⃣ RSI (Relative Strength Index) & AI Price Prediction 
+![image](https://github.com/user-attachments/assets/c9513c6d-31d5-4864-bb70-ceaaabd446e2)
+
+### 4️⃣ Portfolio Tracker
+![image](https://github.com/user-attachments/assets/8f4c8e93-f8cf-4a0a-b309-27eda491c575)
+
+
 ## 🚀 Running the App Locally  
 ```sh
 streamlit run app.py
