@@ -30,9 +30,12 @@ BINANCE_API_URL = "https://api.binance.com/api/v3/ticker/24hr"
 CRYPTO_PAIRS = ["BTC/USDT", "ETH/USDT", "BNB/USDT", "XRP/USDT", "ADA/USDT", "DOGE/USDT", "SOL/USDT"]
 
 # Initialize Binance API (ccxt)
+import ccxt
 binance = ccxt.binance({
     'apiKey': 'ZkkFxuvMBhtu5hK3qfmwTWk5kME0VqiFp3j8eim7SfiGCoF2ocBjGPLaUFNBapjF',
-    'secret': 'scFOoOLEJHwF7KZnVcC8HVGK9DTa7PR4ZCRPD0IZ5SQVTvdsLbYZw8rc9sgPVcGw'
+    'secret': 'scFOoOLEJHwF7KZnVcC8HVGK9DTa7PR4ZCRPD0IZ5SQVTvdsLbYZw8rc9sgPVcGw',
+    'enableRateLimit': True,
+    'options': {'adjustForTimeDifference': True},
 })
 currency_rates = CurrencyRates()
 
