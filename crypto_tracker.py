@@ -31,9 +31,10 @@ CRYPTO_PAIRS = ["BTC/USDT", "ETH/USDT", "BNB/USDT", "XRP/USDT", "ADA/USDT", "DOG
 
 # Initialize Binance API (ccxt)
 import ccxt
+st.secrets.load_if_needed()  # Load secrets (needed for Streamlit Cloud)
 binance = ccxt.binance({
-    'apiKey': 'ZkkFxuvMBhtu5hK3qfmwTWk5kME0VqiFp3j8eim7SfiGCoF2ocBjGPLaUFNBapjF',
-    'secret': 'scFOoOLEJHwF7KZnVcC8HVGK9DTa7PR4ZCRPD0IZ5SQVTvdsLbYZw8rc9sgPVcGw',
+    'apiKey': st.secrets["binance"]["api_key"],
+    'secret': st.secrets["binance"]["api_secret"],
     'enableRateLimit': True,
     'options': {'adjustForTimeDifference': True},
 })
@@ -116,6 +117,9 @@ selected_crypto = st.selectbox("Select Cryptocurrency", formatted_crypto_pairs)
 st.subheader("📊 Candlestick Chart with Indicators")
 actual_crypto_pair = selected_crypto.replace(base_currency, "USDT")  # Convert back to USDT for API call
 historical_data = get_historical_data(actual_crypto_pair)
+if historical_data.empty:
+    st.warning(f"No historical data available for {selected_crypto}")
+    st.stop()
 historical_data = add_technical_indicators(historical_data)
 
 fig = go.Figure()
