@@ -102,10 +102,10 @@ streamlit run app.py
 
 ## 👨‍💻 Developer  
 
-👤 **[Your Name]**  
-🔗 **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile/)  
-📧 **Email:** your-email@example.com  
-🔗 **GitHub:** [yourusername](https://github.com/yourusername)  
+👤 **D ARUN KUMAR**  
+🔗 **LinkedIn:** [Your LinkedIn Profile](www.linkedin.com/in/kumardarun11)  
+📧 **Email:** kumardarun11@example.com  
+🔗 **GitHub:** [kumardarun11](https://github.com/kumardarun11)  
 
 ---
 
