@@ -7,3 +7,4 @@ ta
 ccxt
 prophet
 forex-python
+requests-cache
