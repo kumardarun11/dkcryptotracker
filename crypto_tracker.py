@@ -12,6 +12,8 @@ import requests
 import requests_cache
 
 requests_cache.install_cache('currency_cache', expire_after=3600)  # Cache for 1 hour
+requests_cache.clear()  # Clear cache before fetching new rates
+
 
 def get_conversion_rate(base="USD", target="INR"):
     url = f"https://api.exchangerate-api.com/v4/latest/{base}"
@@ -31,10 +33,9 @@ CRYPTO_PAIRS = ["BTC/USDT", "ETH/USDT", "BNB/USDT", "XRP/USDT", "ADA/USDT", "DOG
 
 # Initialize Binance API (ccxt)
 import ccxt
-st.secrets.load_if_needed()  # Load secrets (needed for Streamlit Cloud)
 binance = ccxt.binance({
-    'apiKey': st.secrets["binance"]["api_key"],
-    'secret': st.secrets["binance"]["api_secret"],
+    'apiKey': 'ZkkFxuvMBhtu5hK3qfmwTWk5kME0VqiFp3j8eim7SfiGCoF2ocBjGPLaUFNBapjF',
+    'secret': 'scFOoOLEJHwF7KZnVcC8HVGK9DTa7PR4ZCRPD0IZ5SQVTvdsLbYZw8rc9sgPVcGw',
     'enableRateLimit': True,
     'options': {'adjustForTimeDifference': True},
 })
@@ -87,7 +88,7 @@ def predict_future_prices(df):
     prophet_df = df.rename(columns={"Time": "ds", "Close": "y"})
     model = Prophet()
     model.fit(prophet_df)
-    future = model.make_future_dataframe(periods=24, freq="H")
+    future = model.make_future_dataframe(periods=24, freq="h")
     forecast = model.predict(future)
     return forecast
 
@@ -106,7 +107,8 @@ alert_threshold = st.sidebar.slider("🚨 Alert Threshold (%)", 1, 10, 5)
 # Fetch & display live prices
 st.subheader("💰 Live Crypto Prices")
 crypto_data = get_crypto_data(base_currency)
-st.dataframe(crypto_data.style.applymap(lambda x: "color: red" if x < 0 else "color: green", subset=["24h % Change"]))
+st.dataframe(crypto_data.style.map(lambda x: "color: red" if x < 0 else "color: green", subset=["24h % Change"]))
+
 
 # Choose cryptocurrency for analysis
 st.subheader("📈 Technical Analysis")
@@ -117,9 +119,6 @@ selected_crypto = st.selectbox("Select Cryptocurrency", formatted_crypto_pairs)
 st.subheader("📊 Candlestick Chart with Indicators")
 actual_crypto_pair = selected_crypto.replace(base_currency, "USDT")  # Convert back to USDT for API call
 historical_data = get_historical_data(actual_crypto_pair)
-if historical_data.empty:
-    st.warning(f"No historical data available for {selected_crypto}")
-    st.stop()
 historical_data = add_technical_indicators(historical_data)
 
 fig = go.Figure()
@@ -152,8 +151,15 @@ if crypto_input and amount_input > 0:
     price = crypto_data.loc[crypto_data["Symbol"] == f"{crypto_input}/{base_currency}", "Price"].values[0]
     st.write(f"💰 Your {crypto_input} is worth: **{price * amount_input:.2f} {base_currency}**")
 
-# Real-time update
-st.sidebar.write("🔄 Auto-refresh enabled")
-while True:
-    time.sleep(refresh_rate)
+# Refresh Data 
+if st.sidebar.button("🔄 Refresh Data"):
     st.rerun()
+
+# ℹ Developer Info
+st.sidebar.markdown("---")
+st.sidebar.subheader("👨‍💻 Developer Info")
+st.sidebar.write("**Name:** D ARUN KUMAR")
+st.sidebar.write("📧 Email: kumardarun11@gmail.com")
+st.sidebar.write("[GitHub](https://github.com/kumardarun11) | [LinkedIn](https://linkedin.com/in/kumardarun11)")
+
+
