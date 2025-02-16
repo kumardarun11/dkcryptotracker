@@ -161,5 +161,3 @@ st.sidebar.subheader("👨‍💻 Developer Info")
 st.sidebar.write("**Name:** D ARUN KUMAR")
 st.sidebar.write("📧 Email: kumardarun11@gmail.com")
 st.sidebar.write("[GitHub](https://github.com/kumardarun11) | [LinkedIn](https://linkedin.com/in/kumardarun11)")
-
-
