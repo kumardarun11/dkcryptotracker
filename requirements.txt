@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+requests
+plotly
+ta
+ccxt
+prophet
+forex-python
+requests-cache
